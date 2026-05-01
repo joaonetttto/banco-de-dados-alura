@@ -67,8 +67,32 @@ def listar_estudantes():
     """
     )
     estudantes = cursor.fetchall()
-    for esrudante in estudantes:
+    for estudante in estudantes:
         print(estudante)
     conn.commit()
     conn.close() 
     
+def criar_matricula(estudante_id, nome_dicisplina):
+    conn = conectar()
+    cursor = conn.cursor()
+    cursor.execute(
+    """
+    INSERT INTO  matriculas (estudante_id, nome_disciplina) values (?, ?)
+    """,(estudante_id, nome_dicisplina)
+    )
+    conn.commit()
+    conn.close()
+    
+def listar_matricula():
+    conn = conectar()
+    cursor = conn.cursor()
+    cursor.execute(
+    """
+    SELECT * FROM matriculas JOIN estudantes ON matriculas.estudante_id = estudantes.id
+    """
+    )
+    matriculas = cursor.fetchall()
+    for matricula in matriculas:
+        print(matricula)
+    conn.commit()
+    conn.close()
