@@ -29,6 +29,6 @@ def create_student(
         return db_student
     
 @app.get('/estudantes/', response_model=list[schemas.EstudantesResponse])
-def read_students(db: Session = Depends(get_db())):
+def read_students(db: Session = Depends(get_db)):
     students = db.query(models.Estudantes).all()
     return students

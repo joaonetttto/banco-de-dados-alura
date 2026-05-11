@@ -25,7 +25,7 @@ class Matriculas(Base):
         )
     estudante_id = Column(
         Integer, 
-        ForeignKey("estudante.id"), 
+        ForeignKey("estudantes.id"), 
         
         )
     nome_disciplina = Column(
