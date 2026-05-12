@@ -1,0 +1,5 @@
+fastapi #framework para construção de APIs
+uvicorn # servidor ASGI para rodar a aplicação FastAPI
+sqlalchemy    #traduzir comandos SQL para Python e vice-versa
+psycopg2-binary # driver para conectar o Python ao PostgreSQL
+pydantic # validação de dados e criação de modelos de dados
